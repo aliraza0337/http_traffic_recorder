@@ -219,7 +219,7 @@ class ProxyHandler(BaseHTTPRequestHandler):
 			res += content_received
 			#log the size
 			try:
-				http_obj = recorder.HTTPObject(h.getheaders(), url_requested , content_received, h.status, h.reason, self.request_version, webpage, self.rtt)
+				http_obj = recorder.http_object(h.getheaders(), url_requested , content_received, h.status, h.reason, self.request_version, webpage, self.rtt)
 				recorder.save_obj(http_obj)
 			except Exception,e: 
 				print str(e)
